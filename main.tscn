@@ -1,0 +1,439 @@
+[gd_scene format=3 uid="uid://m5w3lprt6f4x"]
+
+[ext_resource type="Script" uid="uid://x7jmjnmutrxx" path="res://main.gd" id="1_ig7tw"]
+
+[node name="main" type="Node2D" unique_id=1450403714]
+script = ExtResource("1_ig7tw")
+
+[node name="MainPanel" type="Panel" parent="." unique_id=79675753]
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="MainPanel" unique_id=159259421]
+custom_minimum_size = Vector2(1920, 50)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.17254902, 0.24313726, 0.3137255, 1)
+
+[node name="TopBar" type="HBoxContainer" parent="MainPanel/ColorRect" unique_id=171003484]
+custom_minimum_size = Vector2(1920, 50)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 50.0
+
+[node name="McuLabel" type="Label" parent="MainPanel/ColorRect/TopBar" unique_id=1208863311]
+layout_mode = 2
+text = "Микроконтроллер"
+
+[node name="McuSelect" type="OptionButton" parent="MainPanel/ColorRect/TopBar" unique_id=908478213]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9691369, 0.9691369, 0.9691368, 1)
+item_count = 2
+popup/item_0/text = "CH32V003"
+popup/item_0/id = 0
+popup/item_1/text = "CH32V203"
+popup/item_1/id = 1
+
+[node name="Spacer" type="Control" parent="MainPanel/ColorRect/TopBar" unique_id=1332562598]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="GenerateButton" type="Button" parent="MainPanel/ColorRect/TopBar" unique_id=1360162621]
+layout_mode = 2
+text = "Сгенерировать"
+
+[node name="TabContainer" type="TabContainer" parent="MainPanel" unique_id=96883901]
+layout_mode = 0
+offset_top = 50.0
+offset_right = 960.0
+offset_bottom = 670.0
+current_tab = 0
+tab_0/title = "BLDC"
+tab_1/title = "DSHOT"
+
+[node name="BLDCTab" type="VBoxContainer" parent="MainPanel/TabContainer" unique_id=575006299]
+custom_minimum_size = Vector2(1920, 400)
+layout_mode = 2
+metadata/_tab_index = 0
+metadata/_tab_name = "BLDC"
+
+[node name="BLDCFrame" type="MarginContainer" parent="MainPanel/TabContainer/BLDCTab" unique_id=2066084294]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="BLDCContent" type="VBoxContainer" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame" unique_id=1242489615]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="BLDCTimerRow" type="HBoxContainer" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent" unique_id=616634889]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent/BLDCTimerRow" unique_id=476646201]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Таймер"
+
+[node name="Label2" type="Label" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent/BLDCTimerRow" unique_id=338991739]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.48570347, 0.48570353, 0.48570347, 1)
+theme_override_font_sizes/font_size = 14
+text = "(расширенный)"
+
+[node name="BLDCTimerSelect" type="OptionButton" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent/BLDCTimerRow" unique_id=1980066948]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BLDCRemapRow" type="HBoxContainer" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent" unique_id=1913586447]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent/BLDCRemapRow" unique_id=1039800109]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Набор выводов:"
+
+[node name="BLDCRemapInfo" type="Label" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent/BLDCRemapRow" unique_id=651551559]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4390491, 0.43904912, 0.43904912, 1)
+theme_override_font_sizes/font_size = 14
+text = "(выберите remap)"
+
+[node name="BLDCRemapSelect" type="OptionButton" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent/BLDCRemapRow" unique_id=1784058637]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BLDCPwmRow" type="HBoxContainer" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent" unique_id=1887609348]
+layout_mode = 2
+
+[node name="PSC" type="Label" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent/BLDCPwmRow" unique_id=415797174]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "PSC:"
+
+[node name="BLDCPscSpin" type="SpinBox" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent/BLDCPwmRow" unique_id=150602745]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+max_value = 65535.0
+value = 3.0
+
+[node name="Label" type="Label" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent/BLDCPwmRow" unique_id=260781518]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Period:"
+
+[node name="BLDCPeriodSpin" type="SpinBox" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent/BLDCPwmRow" unique_id=1733273945]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+max_value = 65535.0
+value = 512.0
+
+[node name="BLDCIrqRow" type="HBoxContainer" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent" unique_id=1768242133]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent/BLDCIrqRow" unique_id=1377318107]
+layout_mode = 2
+text = "Использовать быстрые прерывания"
+
+[node name="BLDCFastIrqCheck" type="CheckBox" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent/BLDCIrqRow" unique_id=1049482233]
+layout_mode = 2
+button_pressed = true
+
+[node name="Label2" type="Label" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent/BLDCIrqRow" unique_id=196397523]
+layout_mode = 2
+text = "Кастомные пины компаратора: "
+
+[node name="BLDCCustomPinsCheck" type="CheckBox" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent/BLDCIrqRow" unique_id=692409517]
+layout_mode = 2
+button_pressed = true
+
+[node name="HSeparator" type="HSeparator" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent" unique_id=1143793362]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent/HSeparator" unique_id=552376326]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 162.0
+offset_bottom = 33.0
+text = "Пины компаратора:"
+
+[node name="BLDC_PhaseU_Row" type="HBoxContainer" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent/HSeparator" unique_id=1619526849]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 900.0
+offset_bottom = 80.0
+
+[node name="Label" type="Label" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent/HSeparator/BLDC_PhaseU_Row" unique_id=1368309622]
+layout_mode = 2
+text = "Фаза U:"
+
+[node name="Label2" type="Label" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent/HSeparator/BLDC_PhaseU_Row" unique_id=1058559488]
+layout_mode = 2
+text = "Порт:"
+
+[node name="BLDC_PortU_Select" type="OptionButton" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent/HSeparator/BLDC_PhaseU_Row" unique_id=448700324]
+layout_mode = 2
+item_count = 3
+popup/item_0/text = "A"
+popup/item_0/id = 0
+popup/item_1/text = "C"
+popup/item_1/id = 1
+popup/item_2/text = "D"
+popup/item_2/id = 2
+
+[node name="Label3" type="Label" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent/HSeparator/BLDC_PhaseU_Row" unique_id=420430080]
+layout_mode = 2
+text = "Пин:"
+
+[node name="BLDC_PinU_Select" type="OptionButton" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent/HSeparator/BLDC_PhaseU_Row" unique_id=1569418941]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+item_count = 8
+popup/item_0/text = "0"
+popup/item_0/id = 0
+popup/item_1/text = "1"
+popup/item_1/id = 1
+popup/item_2/text = "2"
+popup/item_2/id = 2
+popup/item_3/text = "3"
+popup/item_3/id = 3
+popup/item_4/text = "4"
+popup/item_4/id = 4
+popup/item_5/text = "5"
+popup/item_5/id = 5
+popup/item_6/text = "6"
+popup/item_6/id = 6
+popup/item_7/text = "7"
+popup/item_7/id = 7
+
+[node name="BLDC_PhaseV_Row" type="HBoxContainer" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent/HSeparator" unique_id=1426053881]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 900.0
+offset_bottom = 120.0
+
+[node name="Label" type="Label" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent/HSeparator/BLDC_PhaseV_Row" unique_id=1355604484]
+layout_mode = 2
+text = "Фаза V:"
+
+[node name="Label2" type="Label" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent/HSeparator/BLDC_PhaseV_Row" unique_id=1498597707]
+layout_mode = 2
+text = "Порт:"
+
+[node name="BLDC_PortV_Select" type="OptionButton" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent/HSeparator/BLDC_PhaseV_Row" unique_id=1688629578]
+layout_mode = 2
+item_count = 3
+popup/item_0/text = "A"
+popup/item_0/id = 0
+popup/item_1/text = "C"
+popup/item_1/id = 1
+popup/item_2/text = "D"
+popup/item_2/id = 2
+
+[node name="Label3" type="Label" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent/HSeparator/BLDC_PhaseV_Row" unique_id=215638658]
+layout_mode = 2
+text = "Пин:"
+
+[node name="BLDC_PinV_Select" type="OptionButton" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent/HSeparator/BLDC_PhaseV_Row" unique_id=1013604704]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+item_count = 8
+popup/item_0/text = "0"
+popup/item_0/id = 0
+popup/item_1/text = "1"
+popup/item_1/id = 1
+popup/item_2/text = "2"
+popup/item_2/id = 2
+popup/item_3/text = "3"
+popup/item_3/id = 3
+popup/item_4/text = "4"
+popup/item_4/id = 4
+popup/item_5/text = "5"
+popup/item_5/id = 5
+popup/item_6/text = "6"
+popup/item_6/id = 6
+popup/item_7/text = "7"
+popup/item_7/id = 7
+
+[node name="BLDC_PhaseW_Row" type="HBoxContainer" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent/HSeparator" unique_id=1803787542]
+layout_mode = 0
+offset_top = 120.0
+offset_right = 900.0
+offset_bottom = 160.0
+
+[node name="Label" type="Label" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent/HSeparator/BLDC_PhaseW_Row" unique_id=310273518]
+layout_mode = 2
+text = "Фаза W:"
+
+[node name="Label2" type="Label" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent/HSeparator/BLDC_PhaseW_Row" unique_id=1134752430]
+layout_mode = 2
+text = "Порт:"
+
+[node name="BLDC_PortW_Select" type="OptionButton" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent/HSeparator/BLDC_PhaseW_Row" unique_id=1153087916]
+layout_mode = 2
+item_count = 3
+popup/item_0/text = "A"
+popup/item_0/id = 0
+popup/item_1/text = "C"
+popup/item_1/id = 1
+popup/item_2/text = "D"
+popup/item_2/id = 2
+
+[node name="Label3" type="Label" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent/HSeparator/BLDC_PhaseW_Row" unique_id=365588203]
+layout_mode = 2
+text = "Пин:"
+
+[node name="BLDC_PinW_Select" type="OptionButton" parent="MainPanel/TabContainer/BLDCTab/BLDCFrame/BLDCContent/HSeparator/BLDC_PhaseW_Row" unique_id=1128783285]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+item_count = 8
+popup/item_0/text = "0"
+popup/item_0/id = 0
+popup/item_1/text = "1"
+popup/item_1/id = 1
+popup/item_2/text = "2"
+popup/item_2/id = 2
+popup/item_3/text = "3"
+popup/item_3/id = 3
+popup/item_4/text = "4"
+popup/item_4/id = 4
+popup/item_5/text = "5"
+popup/item_5/id = 5
+popup/item_6/text = "6"
+popup/item_6/id = 6
+popup/item_7/text = "7"
+popup/item_7/id = 7
+
+[node name="DSHOTTab" type="VBoxContainer" parent="MainPanel/TabContainer" unique_id=764412674]
+visible = false
+custom_minimum_size = Vector2(1920, 0)
+layout_mode = 2
+metadata/_tab_index = 1
+metadata/_tab_name = "DSHOT"
+
+[node name="DSHOTFrame" type="MarginContainer" parent="MainPanel/TabContainer/DSHOTTab" unique_id=1831223652]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="DSHOTContent" type="VBoxContainer" parent="MainPanel/TabContainer/DSHOTTab/DSHOTFrame" unique_id=1380699674]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="DSHOTTimerRow" type="HBoxContainer" parent="MainPanel/TabContainer/DSHOTTab/DSHOTFrame/DSHOTContent" unique_id=2005325156]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/TabContainer/DSHOTTab/DSHOTFrame/DSHOTContent/DSHOTTimerRow" unique_id=1721874770]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Таймер:"
+
+[node name="Label2" type="Label" parent="MainPanel/TabContainer/DSHOTTab/DSHOTFrame/DSHOTContent/DSHOTTimerRow" unique_id=135071959]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.48570347, 0.48570353, 0.48570347, 1)
+theme_override_font_sizes/font_size = 14
+text = "(любой)"
+
+[node name="DSHOTTimerSelect" type="OptionButton" parent="MainPanel/TabContainer/DSHOTTab/DSHOTFrame/DSHOTContent/DSHOTTimerRow" unique_id=1965266276]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DSHOTRemapRow" type="HBoxContainer" parent="MainPanel/TabContainer/DSHOTTab/DSHOTFrame/DSHOTContent" unique_id=1793638139]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/TabContainer/DSHOTTab/DSHOTFrame/DSHOTContent/DSHOTRemapRow" unique_id=1335357295]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Набор выводов:"
+
+[node name="DSHOTRemapInfo" type="Label" parent="MainPanel/TabContainer/DSHOTTab/DSHOTFrame/DSHOTContent/DSHOTRemapRow" unique_id=1228404533]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.47983426, 0.47983432, 0.47983426, 1)
+theme_override_font_sizes/font_size = 14
+text = "(выберите remap)"
+
+[node name="DSHOTRemapSelect" type="OptionButton" parent="MainPanel/TabContainer/DSHOTTab/DSHOTFrame/DSHOTContent/DSHOTRemapRow" unique_id=17560163]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DSHOTSpeedRow" type="HBoxContainer" parent="MainPanel/TabContainer/DSHOTTab/DSHOTFrame/DSHOTContent" unique_id=1764573502]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/TabContainer/DSHOTTab/DSHOTFrame/DSHOTContent/DSHOTSpeedRow" unique_id=1775731643]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Скорость (Kbps):"
+
+[node name="DSHOTSpeedSelect" type="OptionButton" parent="MainPanel/TabContainer/DSHOTTab/DSHOTFrame/DSHOTContent/DSHOTSpeedRow" unique_id=1198722054]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+item_count = 4
+popup/item_0/text = "150"
+popup/item_0/id = 0
+popup/item_1/text = "300"
+popup/item_1/id = 1
+popup/item_2/text = "600"
+popup/item_2/id = 2
+popup/item_3/text = "1200"
+popup/item_3/id = 3
+
+[node name="DSHOTFlagsRow" type="HBoxContainer" parent="MainPanel/TabContainer/DSHOTTab/DSHOTFrame/DSHOTContent" unique_id=2077438983]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/TabContainer/DSHOTTab/DSHOTFrame/DSHOTContent/DSHOTFlagsRow" unique_id=1163178752]
+layout_mode = 2
+text = "Двунаправленный DSHOT"
+
+[node name="DSHOTBidirCheck" type="CheckBox" parent="MainPanel/TabContainer/DSHOTTab/DSHOTFrame/DSHOTContent/DSHOTFlagsRow" unique_id=1649309812]
+layout_mode = 2
+button_pressed = true
+
+[node name="Label2" type="Label" parent="MainPanel/TabContainer/DSHOTTab/DSHOTFrame/DSHOTContent/DSHOTFlagsRow" unique_id=528774363]
+layout_mode = 2
+text = "Расширенная телеметрия (EDT)"
+
+[node name="DSHOTEdtCheck" type="CheckBox" parent="MainPanel/TabContainer/DSHOTTab/DSHOTFrame/DSHOTContent/DSHOTFlagsRow" unique_id=1584220324]
+layout_mode = 2
+button_pressed = true
+
+[node name="DSHOTIrqRow" type="HBoxContainer" parent="MainPanel/TabContainer/DSHOTTab/DSHOTFrame/DSHOTContent" unique_id=1675751138]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/TabContainer/DSHOTTab/DSHOTFrame/DSHOTContent/DSHOTIrqRow" unique_id=1693957169]
+layout_mode = 2
+text = "Быстрые прерывания"
+
+[node name="DSHOTFastIrqCheck" type="CheckBox" parent="MainPanel/TabContainer/DSHOTTab/DSHOTFrame/DSHOTContent/DSHOTIrqRow" unique_id=688033775]
+layout_mode = 2
+button_pressed = true
+
+[node name="ColorRect2" type="ColorRect" parent="MainPanel" unique_id=1186587968]
+custom_minimum_size = Vector2(1920, 400)
+layout_mode = 0
+offset_top = 670.0
+offset_right = 960.0
+offset_bottom = 770.0
+color = Color(0.13694689, 0.20658225, 0.06484832, 1)
+
+[node name="MessageLog" type="RichTextLabel" parent="MainPanel/ColorRect2" unique_id=1447902999]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 4.0
+offset_right = -3.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_selected_color = Color(0, 0, 0, 0)
+theme_override_colors/table_border = Color(0.17254902, 0.24313726, 0.3137255, 1)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+scroll_following = true
+scroll_following_visible_characters = true

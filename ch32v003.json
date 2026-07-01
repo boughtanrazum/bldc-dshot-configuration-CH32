@@ -1,0 +1,62 @@
+{
+  "timers": {
+    "TIM1": {
+      "extended": true,
+      "remaps": [
+        {
+          "index": 0,
+          "pins": [
+            "CH1=PD2", "CH2=PA1", "CH3=PC3", "CH4=PC4", 
+            "CH1N=PD0", "CH2N=PA2", "CH3N=PD1", 
+            "BKIN=PC2", "ETR=PC5"
+          ]
+        },
+        {
+          "index": 1,
+          "pins": [
+            "CH1=PC6", "CH2=PC7", "CH3=PC0", "CH4=PD3", 
+            "CH1N=PC3", "CH2N=PC4", "CH3N=PD1", 
+            "BKIN=PC1", "ETR=PC5"
+          ]
+        },
+        {
+          "index": 2,
+          "pins": [
+            "CH1=PD2", "CH2=PA1", "CH3=PC3", "CH4=PC4", 
+            "CH1N=PD0", "CH2N=PA2", "CH3N=PD1", 
+            "BKIN=PC2", "ETR=PD4"
+          ]
+        },
+        {
+          "index": 3,
+          "pins": [
+            "CH1=PC4", "CH2=PC7", "CH3=PC5", "CH4=PD4", 
+            "CH1N=PC3", "CH2N=PD2", "CH3N=PC6", 
+            "BKIN=PC1", "ETR=PC2"
+          ]
+        }
+      ]
+    },
+    "TIM2": {
+      "extended": false,
+      "remaps": [
+        {
+          "index": 0,
+          "pins": ["CH1=PD4", "CH2=PD3", "CH3=PC0", "CH4=PD7", "ETR=PD4"]
+        },
+        {
+          "index": 1,
+          "pins": ["CH1=PC5", "CH2=PC2", "CH3=PD2", "CH4=PC1", "ETR=PC5"]
+        },
+        {
+          "index": 2,
+          "pins": ["CH1=PC1", "CH2=PD3", "CH3=PC0", "CH4=PD7", "ETR=PC1"]
+        },
+        {
+          "index": 3,
+          "pins": ["CH1=PC1", "CH2=PC7", "CH3=PD6", "CH4=PD5", "ETR=PC1"]
+        }
+      ]
+    }
+  }
+}
